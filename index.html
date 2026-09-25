@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Digital Card</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <header>
         <h1>My Business Card</h1>
     </header>
@@ -21,14 +21,12 @@
     </nav>
 
     <main>
-
         <h1>Georgy Kuchvalskiy</h1>
 
         <section>
             <h2>My Image</h2>
-
             <img src="./my-photo.jpg"
-                 alt="My photo"
+                 alt="Photo of Georgy Kuchvalskiy"
                  width="300">
         </section>
 
@@ -38,7 +36,8 @@
             <p>
                 My name is Georgy. I am a programming student.
                 I am interested in <b>technology</b> and <i>sports</i>.<br>
-                In my free time, I like playing computer games and spending time with my friends.
+                In my free time, I like playing computer games
+                and spending time with my friends.
             </p>
         </article>
 
@@ -68,63 +67,75 @@
             <h2>My Weekly Schedule</h2>
 
             <table>
-                <tr>
-                    <th>Day</th>
-                    <th>Activity</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Activity</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <td>Monday</td>
-                    <td>Gym</td>
-                </tr>
-
-                <tr>
-                    <td>Wednesday</td>
-                    <td>Programming</td>
-                </tr>
-
-                <tr>
-                    <td>Friday</td>
-                    <td>Gym</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Gym</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Programming</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>Gym</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
         <section>
             <h2>Contact Form</h2>
 
-            <form>
+            <!-- Учебная форма: отправка на сервер не подключена. -->
+            <form onsubmit="event.preventDefault(); document.getElementById('form-status').textContent = 'Demo form: your message has not been sent.';">
                 <label for="name">Name:</label><br>
-                <input type="text" id="name"><br><br>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       autocomplete="name"
+                       required>
+                <br><br>
 
                 <label for="email">Email:</label><br>
-                <input type="email" id="email"><br><br>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       autocomplete="email"
+                       required>
+                <br><br>
 
                 <label for="message">Message:</label><br>
-                <textarea id="message"></textarea><br><br>
+                <textarea id="message"
+                          name="message"
+                          rows="5"
+                          required></textarea>
+                <br><br>
 
                 <label for="contact-method">How to contact me:</label><br>
-
-                <select id="contact-method">
-                    <option>Email</option>
-                    <option>Phone</option>
-                    <option>Telegram</option>
+                <select id="contact-method" name="contact-method">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="telegram">Telegram</option>
                 </select>
-
                 <br><br>
 
                 <button type="submit">Send</button>
+                <p id="form-status" role="status"></p>
             </form>
         </section>
-
     </main>
 
     <footer id="contact">
         <h2>My Contacts</h2>
-
         <a href="https://github.com/Skyffyy">GitHub link</a>
     </footer>
-
 </body>
-
 </html>
