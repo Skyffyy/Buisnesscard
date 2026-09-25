@@ -69,6 +69,15 @@ aside {
     margin: 24px 0;
     background-color: white;
 }
+/*
+8. Pirms box-sizing: border-box (content-box):
+   kopējais platums = 280 + 15 + 15 + 4 + 4 = 318px.
+   Satura platums = 280px.
+
+9. Ar box-sizing: border-box:
+   kopējais platums = 280px.
+   Satura platums = 280 - 15 - 15 - 4 - 4 = 242px.
+*/
 
 .kartite {
     width: 280px;
